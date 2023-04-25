@@ -1,0 +1,836 @@
+package projectSystem;
+
+import java.util.Scanner;
+
+public class Cashiering {
+	
+	public static void main (String[] args) {
+		
+		// FINAL CASHIERING SYSTEM..
+		
+		Scanner n = new Scanner (System.in);
+		   
+		   int Users, choice, qty, sum, change, cash;
+		   int count = 0;
+		   String cashier, pass, select, name, pass1;
+		   
+			
+			System.out.print("\n               Welcome to Don Miguel Bakeshop");
+			System.out.print("\n\n");
+			System.out.print("Do you want to start your transaction? if YES press 1 | if NO press 2 : ");
+		    Users = n.nextInt();
+		    
+		    if (Users == 1) {
+		    	
+		    	cashier = n.nextLine();  
+			    System.out.print("\nRegister Cashier : ");
+			    cashier = n.nextLine();
+			    
+			    System.out.print("Password : ");
+			    pass = n.nextLine();
+			    
+			    System.out.println("\nPlease enter your registered account.");
+			    System.out.print("\nUsername : ");
+			    name = n.nextLine();
+			    
+			    System.out.print("Password : ");
+			    pass1 = n.nextLine();
+			    
+			    while (count <= 2) {            
+			        if ((!cashier.equalsIgnoreCase(name)) || (!pass.equalsIgnoreCase(pass1))) {       
+			        	System.out.println("\nWrong Entry! Try Again!");
+			        	System.out.print("\nUsername : ");
+					    name = n.nextLine();
+					    
+					    System.out.print("Password : ");
+					    pass1 = n.nextLine();
+					    
+			        }   
+			        else {
+			            System.out.println("\nYou are now logged in");
+			            
+			            System.out.print("\n               Welcome to Don Miguel Bakeshop");
+					    
+					    System.out.print("\n\nMENU :                                          PRICE :\r\n"
+					    		+ "\r\n"
+					    		+ "1. Pig Pie                                      Php 6.00\r\n"
+					    		+ "2. Sweet Heart                                  Php 6.00\r\n"
+					    		+ "3. Essay Plain                                  Php 7.00\r\n"
+					    		+ "4. Choco Roll                                   Php 7.00\r\n"
+					    		+ "5. Coco Roll                                    Php 7.00\r\n"
+					    		+ "6. Sesame Ball                                  Php 8.00\r\n"
+					    		+ "7. Peanut Rose                                  Php 8.00\r\n"
+					    		+ "8. Torta                                        Php 15.00\r\n"
+					    		+ "9. Pianomo (Purple)                             Php 18.00\r\n"
+					    		+ "10. Pianomo (White)                             Php 18.00\r\n"
+					    		+ "11. Bake Siopao                                 Php 38.00\r\n"
+					    		+ "12. Custard Mamon                               Php 20.00\r\n"
+					    		+ "13. Sweet Roll                                  Php 28.00\r\n"
+					    		+ "14. Ube Cake                                    Php 286.00\r\n"
+					    		+ "15. Choco Cake                                  Php 286.00");
+					   
+					    do {
+					    System.out.print("\n\nSelect your choice : ");
+					    choice = n.nextInt();
+					    
+					    System.out.print("Quantity : ");
+					    qty = n.nextInt();
+					    
+					    switch (choice) {
+					    
+					    case 1 : // Pig pie
+					    	
+					    	String pie = "Pig Pie";		
+					    	int price = 6;
+					    	sum = qty * price;
+					    	int vat = 12; 				    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+					    	System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + pie);
+						    System.out.println("Price         : " + price);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	break;
+					    	
+			           case 2 : // Sweet Heart
+					    	
+			        	   
+			        	    String heart = "Sweet Heart";
+			        	    int price1 = 6;
+					    	sum = qty * price1;
+					    	int vat1 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+					    	System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + heart);
+						    System.out.println("Price         : " + price1);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat1 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price1);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break;	
+					   
+			           case 3 : // Essay Plain
+					    	
+					    	String essay = "Essay Plain";
+					    	int price2 = 7;
+					    	sum = qty * price2;
+					    	int vat2 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + essay);
+						    System.out.println("Price         : " + price2);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat2 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price2);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break;
+					    	
+			           case 4 : // Choco Roll
+					    	
+					    	String choco = "Choco Roll";
+					    	int price3 = 7;
+					    	sum = qty * price3;
+					    	int vat3 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + choco);
+						    System.out.println("Price         : " + price3);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat3 + "%");
+						    System.out.println("VAT Amount    : " +(sum * 0.12));
+						    System.out.println("Selling Price : " + price3);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break;
+					    	
+			           case 5 : // Coco Roll
+					    	
+					    	String coco = "Coco Roll";
+					    	int price4 = 7;
+					    	sum = qty * price4;
+					    	int vat4 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + coco);
+						    System.out.println("Price         : " + price4);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat4 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price4);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break; 	
+					    	
+			           case 6 : // Sesame Ball
+					    	
+					    	String sesame = "Sesame Ball";
+					    	int price5 = 8;
+					    	sum = qty * price5;
+					    	int vat5 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + sesame);
+						    System.out.println("Price         : " + price5);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat5 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price5);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break;
+					    	
+			           case 7 : // Peanut Rose
+					    	
+					    	String rose = "Peanut Rose";
+					    	int price6 = 8;
+					    	sum = qty * price6;
+					    	int vat6 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+					    	
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + rose);
+						    System.out.println("Price         : " + price6);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat6 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price6);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+	                        System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break; 	
+					    	
+			           case 8: // Torta
+					    	
+					    	String torta = "Torta";
+					    	int price15 = 15;
+					    	sum = qty * price15;
+					    	int vat15 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + torta);
+						    System.out.println("Price         : " + price15);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat15 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price15);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break;
+					    	
+			           case 9 : // Pianomo (Purple)
+					    	
+					    	String purple = "Pianomo Purple";
+					    	int price8 = 18;
+					    	sum = qty * price8;
+					    	int vat8 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+					    	
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + purple);
+						    System.out.println("Price         : " + price8);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat8 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price8);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break; 	
+					    	
+			           case 10 : // Pianomo (White)
+					    	
+					    	String white = "Pianomo White";
+					    	int price9 = 18;
+					    	sum = qty * price9;
+					    	int vat9 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + white);
+						    System.out.println("Price         : " + price9);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat9 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price9);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break; 	
+					    	
+			           case 11 : // Bake Siopao
+					    	
+					    	String bake = "Bake Siopao";
+					    	int price10 = 38;
+					    	sum = qty * price10;
+					    	int vat10 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+					    	
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + bake);
+						    System.out.println("Price         : " + price10);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat10 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price10);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break;
+					    	
+			           case 12 : // Custard Mammon
+					    	
+					    	String custard = "Custard Mammon";
+					    	int price11 = 20;
+					    	sum = qty * price11;
+					    	int vat11 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + custard);
+						    System.out.println("Price         : " + price11);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat11 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price11);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break; 
+					    	
+			           case 13 : // Sweet Roll
+					    	
+					    	String roll = "Sweet Roll";
+					    	int price12 = 28;
+					    	sum = qty * 28;
+					    	int vat12 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+	                        System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + roll);
+						    System.out.println("Price         : " + price12);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat12 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price12);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break;
+					    	
+			           case 14 : // Ube Cake
+					    	
+					    	String ube = "Ube Cake";
+					    	int price13 = 286;
+					    	sum = qty * price13;
+					    	int vat13 = 12;
+					    	
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+					    	System.out.println("\n\n                         DON MIGUEAL BAKESHOP");
+					    	System.out.println("                     KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+					    	System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + ube);
+						    System.out.println("Price         : " + price13);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat13 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price13);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+
+					    	break;
+					    	
+			           case 15 : // Choco Cake
+					    	
+					    	String cake = "Choco Cake";
+					    	int price14 = 286;
+					    	sum = qty * price14;
+					    	int vat14 = 12;
+					    	
+					    	System.out.println("\n\nYour total is : " + sum);
+					    	System.out.print("Please enter your cash : ");
+					    	cash = n.nextInt();
+					    					    	
+					    	if(cash >= sum) {
+	                        System.out.println("\n\n\nPlease wait for the receipt ...");
+					    	
+					    	
+					    	System.out.println("\n\n                        DON MIGUEAL BAKESHOP");
+					    	System.out.println("                    KAUSWAGAN CAGAYAN DE ORO CITY");
+						    
+					    	System.out.print("\n");
+					    	System.out.println("Cashier : " + cashier);
+					    	
+					    	System.out.print("\n");
+					    	
+						    
+						    System.out.println("\n                         SALES TRANSACTION ");
+						    System.out.println("----------------------------------------------------------------");
+						    System.out.println("\nQuantity      : " + qty);
+						    System.out.println("Item          : " + cake);
+						    System.out.println("Price         : " + price14);
+						    System.out.println("Total         : " + sum);
+						    System.out.println("VAT %         : " + vat14 + "%");
+						    System.out.println("VAT Amount    : " + (sum * 0.12));
+						    System.out.println("Selling Price : " + price14);
+						    System.out.println("\n----------------------------------------------------------------");
+						    System.out.println("\nCash   : " + cash);
+						    System.out.println("Change : " + (cash - sum));
+						    System.out.print("\n");
+						    System.out.println("----------------------------------------------------------------");
+						    
+						    System.out.println("                   THIS IS YOUR OFFICIAL RECEIPT");
+						    System.out.println("                       Thank you Come Again!");
+					    	}else {
+					    		System.out.print("Sorry your cash is not enough to your purchase!");
+					    		System.out.print("Please try again!");
+					    	}
+					    	
+					    	break;
+					    }
+					    
+					    select = n.nextLine();
+					    System.out.print("\n\nDo you want another selection ? [Y/N] ");
+					    select = n.nextLine();
+					    
+			   }while(select.equalsIgnoreCase("Y"));
+				  n.close();
+				  
+				  if(select.equalsIgnoreCase("N"));
+				  n.close();
+				  
+				  System.out.print("Thank you! Have a great day!");
+			            
+			            break;
+			        }
+			        count++;
+			        
+			    }
+			    
+			    if (count > 2)
+			    	 System.out.println("\nYou have entered wrong three times. Please try again in a few hours");
+			    System.exit(0);
+			    
+		    }else if (Users == 2) {
+		    	System.out.print("Thank you for responding enjoy your day!");
+		    }else {			   
+		    	System.out.print("Error! Invalid choice please try again!");
+}
+	}
+
+}
