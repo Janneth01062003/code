@@ -88,6 +88,6 @@ Scanner input = new Scanner (System.in);
     } else {
       System.out.print("Error Reported! Invalid Entry!");
   }
-  
+ 
    }
  }   
