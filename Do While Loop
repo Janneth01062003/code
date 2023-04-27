@@ -1,0 +1,120 @@
+package JavaLoop
+
+import java.util.*;
+
+public static void main (String [] args) {
+
+Scanner input = new Scanner (System.in);
+    
+   String name, name1, name2, address, choice, birthday, gender, hired, skills, company;
+   
+   int age;
+   
+   float contact;
+   
+   do{
+   
+     System.out.print
+("        Employee Information System \n\n*****************************************\n");
+     
+     System.out.print
+("\n\nEnter First name: ");
+     name = input.nextLine();
+     
+     System.out.print
+("\nEnter Middle Initial: ");
+     name1 = input.nextLine();
+     
+     System.out.print
+("\nEnter Last name: ");
+     name2 = input.nextLine();
+     
+     System.out.print
+("\nEnter Complete Address: ");
+     address = input.nextLine();
+     
+     System.out.print
+("\nDate of Birthday: ");
+     birthday = input.nextLine();
+     
+     System.out.print
+("\nEnter Age: ");
+     age = input.nextInt();
+     
+     gender = input.nextLine();
+     System.out.print
+("\nEnter Gender: ");
+     gender = input.nextLine();
+     
+     System.out.print
+("\nEnter Contact Number: ");
+     contact = input.nextFloat();
+     
+     hired = input.nextLine();
+     System.out.print
+("\nDate Hired: ");
+     hired = input.nextLine();
+     
+     System.out.print
+("\nWhat skills you have? ");
+     skills = input.nextLine();
+     
+     System.out.print
+("\nDo you have previous company? ");
+     company = input.nextLine();
+     
+     System.out.print
+("\n          " + name + " Personal Information \n*****************************************\n");
+     
+     System.out.print
+("\n\nComplete Name: " + name +" " + name1 +" "+name2);
+     
+     System.out.print
+("\nAddress: " + address);
+     
+     System.out.print
+("\nDate of Birth: " + birthday);
+     
+     System.out.print
+("\nAge: " + age);
+     
+     System.out.print
+("\nGender: " + gender);
+     
+     System.out.print
+("\nContact Number: " + contact);
+     
+     System.out.print
+("\nDate Hired: " + hired);
+     
+     System.out.print
+("\nSkills they have: " + skills);
+     
+     System.out.print
+("\nPrevious company they've  been: " + company);
+     System.out.print
+("\n\n*****************************************\n");
+     
+     System.out.print
+("\n      Do you want to continue? [Y/N]");
+     choice = input.nextLine();
+     
+     System.out.print
+("\n*****************************************\n");
+     
+    }while(choice.equalsIgnoreCase("Y"));
+       input.close();
+    
+    if(choice.equalsIgnoreCase("N")){
+       input.close();
+       
+    System.out.print
+("\nSystem closed!");
+    
+    } else {
+      System.out.print
+("Error Reported! Invalid Entry!");
+  }
+  
+   }
+ }   
