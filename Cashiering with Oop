@@ -1,0 +1,529 @@
+import java.util.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class Main {
+
+    private static ArrayList<String> username = new ArrayList<>();
+    private static ArrayList<String> password = new ArrayList<>();
+    private static ArrayList<Double> Cost = new ArrayList<>();
+    private static Map<Integer, String> menu = new HashMap<>();
+    private static Map<Integer, Double> itemPrices = new HashMap<>();
+    private static ArrayList<Integer> itemsOrdered = new ArrayList<>();
+    private static double totalCost = 0.0;
+
+    public Main() {
+
+        menu.put(1, "Pig Pie");
+        menu.put(2, "Sweet Heart");
+        menu.put(3, "Essay Plain");
+        menu.put(4, "Choco Roll");
+        menu.put(5, "Coco Roll");
+        menu.put(6, "Sesame Ball");
+        menu.put(7, "Peanut Rose");
+        menu.put(8, "Torta");
+        menu.put(9, "Pianomo (Purple)");
+        menu.put(10, "Pianomo (White)");
+        menu.put(11, "Custard Mamon");
+        menu.put(12, "Sweet Roll");
+        menu.put(13, "Bake Siopao");
+        menu.put(14, "Ube Cake");
+        menu.put(15, "Choco Cake");
+
+        itemPrices.put(1, 6.00);
+        itemPrices.put(2, 6.00);
+        itemPrices.put(3, 7.00);
+        itemPrices.put(4, 7.00);
+        itemPrices.put(5, 7.00);
+        itemPrices.put(6, 8.00);
+        itemPrices.put(7, 8.00);
+        itemPrices.put(8, 15.00);
+        itemPrices.put(9, 18.00);
+        itemPrices.put(10, 18.00);
+        itemPrices.put(11, 20.00);
+        itemPrices.put(12, 28.00);
+        itemPrices.put(13, 38.00);
+        itemPrices.put(14, 286.00);
+        itemPrices.put(15, 286.00);
+    }
+
+    public void displayMenu() {
+
+        Scanner i = new Scanner (System.in);
+
+        System.out.println("\n               Welcome to our Cashiering System...");
+
+        System.out.println("\n\nMENU :                                          PRICE :\r\n"
+                + "\r\n"
+                + "1. Pig Pie                                      Php 6\r\n"
+                + "2. Sweet Heart                                  Php 6\r\n"
+                + "3. Essay Plain                                  Php 7\r\n"
+                + "4. Choco Roll                                   Php 7\r\n"
+                + "5. Coco Roll                                    Php 7\r\n"
+                + "6. Sesame Ball                                  Php 8\r\n"
+                + "7. Peanut Rose                                  Php 8\r\n"
+                + "8. Torta                                        Php 15\r\n"
+                + "9. Pianomo (Purple)                             Php 18\r\n"
+                + "10. Pianomo (White)                             Php 18\r\n"
+                + "11. Custard Mamon                               Php 20\r\n"
+                + "12. Sweet Roll                                  Php 28\r\n"
+                + "13. Bake Siopao                                 Php 38\r\n"
+                + "14. Ube Cake                                    Php 286\r\n"
+                + "15. Choco Cake                                  Php 286");
+
+        double totalCost, allPrice = 0.0;
+
+        while (true) {
+            try {
+                System.out.print("\nEnter item number (or 0 to finish order): ");
+                int itemNumber = i.nextInt();
+
+                if (itemNumber == 0 ) {
+                    break;
+                }
+
+                while(itemNumber < 1 || itemNumber >= 16) {
+
+                    System.out.println("\nItem not found in the menu. Please enter a valid item number.");
+                    System.out.print("\nEnter item number (or 0 to finish order): ");
+                    itemNumber = i.nextInt();
+                }
+
+                if (itemNumber == 0 ) {
+                    break;
+                }
+
+                System.out.print("Enter quantity: ");
+                int quantity = i.nextInt();
+
+                if (menu.containsKey(itemNumber)) {
+                    String itemName = menu.get(itemNumber);
+                    double price = itemPrices.get(itemNumber);
+                    totalCost = price * quantity;
+
+                    Cost.add(totalCost);
+
+                    itemsOrdered.add(itemNumber);
+
+                    System.out.println("\nAdded " + itemName + " to your order.");
+                    System.out.println("Total: Php " + totalCost);
+                } else {
+                    System.out.println("\nItem not found in the menu. Please enter a valid item number.");
+                }
+            } catch (Exception e) {
+                System.out.println("\nInvalid choice. Please use numeric number.");
+                i.next();
+            }
+        }
+    }
+    //not yet done log in part
+    public static void LogIn() {
+        Scanner input = new Scanner (System.in);
+
+        System.out.println("Welcome to our Cashiering System...");
+        int choice;
+
+        while (true) {
+            try {
+                System.out.print("\nDo you want to start your transaction?");
+                System.out.println("\n\n1. Yes\n2. No");
+                System.out.print("\nChoose option: ");
+                choice = input.nextInt();
+
+                if (choice == 1) {
+                    input.nextLine(); // Clear the input buffer
+
+                    System.out.print("\nRegister Cashier: ");
+                    String cashier = input.nextLine();
+                    username.add(cashier);
+
+                    System.out.print("Password: ");
+                    String pass = input.nextLine();
+                    password.add(pass);
+
+                    System.out.println("\nPlease enter your registered account.");
+                    System.out.print("\nUsername: ");
+                    String name = input.nextLine();
+                    System.out.print("Password: ");
+                    String pass1 = input.nextLine();
+
+                    while (!username.contains(name) || !password.contains(pass1)) {
+                        System.out.println("\nInvalid username or password. Please try again.");
+                        System.out.print("\nUsername: ");
+                        name = input.nextLine();
+                        System.out.print("Password: ");
+                        pass1 = input.nextLine();
+                    }
+
+                    System.out.println("\nLogin successful!");
+                    break;
+
+
+                } else if (choice == 2) {
+                    System.out.println("\nThank you for using the Cashiering system.");
+                    System.exit(0);
+                    break;
+                } else {
+                    System.out.println("\nInvalid choice. Please select a valid option.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid option (1 or 2).");
+                input.nextLine();
+            }
+        }
+
+    }
+
+
+    public static void logOut() {
+
+        Scanner input = new Scanner (System.in);
+
+        while (true) {
+            try {
+                System.out.print("\nDo you want to start your transaction?");
+                System.out.println("\n\n1. Yes\n2. No");
+                System.out.print("\nChoose option: ");
+                int choice = input.nextInt();
+
+                if (choice == 1) {
+                    input.nextLine();
+
+                    System.out.print("\nDo you already have an account ?");
+                    System.out.println("\n\n1. Yes\n2. No");
+                    System.out.print("\nChoose option: ");
+                    choice = input.nextInt();
+
+                    if (choice == 1) {
+                        System.out.println("\nPlease enter your registered account.");
+                        System.out.print("\nUsername: ");
+                        String name = input.nextLine();
+                        input.nextLine();
+                        System.out.print("Password: ");
+                        String pass1 = input.nextLine();
+
+                        while (true) {
+                            try {
+                                    if (!username.contains(name) || !password.contains(pass1)) {
+                                    System.out.println("\nInvalid username or password. Please try again.");
+                                    System.out.print("\nUsername: ");
+                                    name = input.nextLine();
+                                    System.out.print("Password: ");
+                                    pass1 = input.nextLine();
+                                } else {
+                                    System.out.println("\nLogin successful!");
+                                    break;
+                                }
+                            } catch (InputMismatchException e) {
+                                System.out.println("Invalid input. Please enter a valid username and password.");
+                            }
+                        }break;
+                    }else if(choice == 2){
+                        input.nextLine();
+                        System.out.print("\nRegister Cashier: ");
+                        String cashier1 = input.nextLine();
+                        username.add(cashier1);
+
+
+                        System.out.print("Password: ");
+                        String pass = input.nextLine();
+                        password.add(pass);
+
+                        System.out.println("\nPlease enter your registered account.");
+                        System.out.print("\nUsername: ");
+                        String name = input.nextLine();
+                        System.out.print("Password: ");
+                        String pass1 = input.nextLine();
+
+                        input.nextLine();
+
+                        while (true) {
+                            try {
+                                if (!username.contains(name) || !password.contains(pass1)) {
+                                    System.out.println("\nInvalid username or password. Please try again.");
+                                    System.out.print("\nUsername: ");
+                                    name = input.nextLine();
+                                    System.out.print("Password: ");
+                                    pass1 = input.nextLine();
+                                } else {
+                                    System.out.println("\nLogin successful!");
+                                    break;
+                                }
+                            } catch (InputMismatchException e) {
+                                System.out.println("Invalid input. Please enter a valid username and password.");
+                            }
+
+                        }break;
+                    }else {
+                        System.out.println("\nInvalid choice. Please select a valid option.");
+                    }
+                } else if (choice == 2) {
+                    System.out.println("\nThank you for using the Cashiering system.");
+                    System.exit(0);
+                    break;
+                } else {
+                    System.out.println("\nInvalid choice. Please select a valid option.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid option (1 or 2).");
+                input.nextLine(); // Clear the invalid input
+            }
+        }
+    }
+
+    //check needs try catch
+    public static void delete() {
+            Scanner input = new Scanner(System.in);
+
+            if (itemsOrdered.isEmpty()) {
+                System.out.println("No orders to delete. Please add items to your order.");
+            } else {
+                System.out.println("Your Order:");
+                input.nextLine();
+                for (int i = 0; i < itemsOrdered.size(); i++) {
+                    int orderedItem = itemsOrdered.get(i);
+                    System.out.println((i + 1) + ". " + menu.get(orderedItem) + " - Php " + itemPrices.get(orderedItem));
+                }
+
+                System.out.print("\nEnter the item number to delete: ");
+                int itemIndex = input.nextInt();
+
+                if (itemIndex >= 1 && itemIndex <= itemsOrdered.size()) {
+                    int itemNumber = itemsOrdered.get(itemIndex - 1);
+                    double removedCost = Cost.remove(itemIndex - 1);
+
+                    itemsOrdered.remove(itemIndex - 1);
+
+                    System.out.println("Deleted item " + menu.get(itemNumber) + " from your order.");
+
+                    // You can also update the totalCost here by subtracting the removed cost
+                    totalCost -= removedCost;
+                } else {
+                    System.out.println("Invalid item number. Please enter a valid item number.");
+                }
+            }
+        }
+
+    //check
+    public static void makePayment() {
+        Main order = new Main();
+        Scanner input = new Scanner (System.in);
+
+        if (itemsOrdered.isEmpty()) {
+            System.out.println("No items in your order. Please add items before making a payment.");
+            return;
+        }
+
+        double totalCost = 0.00;
+
+        order.display();
+
+        double itemTotal = 0;
+        for (int i =0; i < Cost.size();i++) {
+
+            double cost = Cost.get(i);
+            itemTotal += cost;
+
+        }
+        System.out.println("\n"+"TOTAL : " + itemTotal);
+        while(true) {
+            try {
+                System.out.print("\nEnter the payment amount: ");
+                double payment = input.nextDouble();
+
+                while(payment< itemTotal){
+                    System.out.print("\nAmount is insufficient. Please try again. ");
+                    System.out.print("\n\nEnter the payment amount: ");
+                    payment = input.nextDouble();
+                }
+
+                double change = payment - itemTotal;
+                System.out.println("\nPayment successful!");
+                System.out.println("Change: " + change);
+
+
+                itemsOrdered.clear();
+
+                System.out.print("\nDo you still want another transaction ?");
+                System.out.println("\n\n1. Yes\n2. No");
+                System.out.print("\nChoose option: ");
+                int choice = input.nextInt();
+
+                if (choice == 1) {
+
+                    break;
+                } else if (choice == 2) {
+                    System.out.println("\nThank you for using the Cashiering system.");
+                    System.exit(0);
+                    break;
+                } else {
+                    System.out.println("\nInvalid choice. Please select a valid option.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid payment amount (numeric).");
+                input.nextLine();
+            }
+        }
+
+    }
+
+    public static void display(){
+
+        Scanner input = new Scanner(System.in);
+
+        if (itemsOrdered.isEmpty()) {
+            System.out.println("\nNo orders to display. Please add items to your order.");
+        } else {
+            System.out.println("\nYour Order:");
+            input.nextLine();
+            for (int i = 0; i < itemsOrdered.size(); i++) {
+                int orderedItem = itemsOrdered.get(i);
+                System.out.println((i + 1) + ". " + menu.get(orderedItem) + " - Php " + itemPrices.get(orderedItem));
+            }
+        }
+
+    }
+
+    public static void select () {
+
+        Scanner i = new Scanner (System.in);
+      Main order = new Main();
+
+        while (true) {
+
+            try {
+                System.out.println("\nSelect your option below: ");
+                System.out.println("1. Select item");
+                System.out.println("2. Display items");
+                System.out.println("3. Delete item");
+                System.out.println("4. Pay");
+                System.out.println("5. Log out");
+                System.out.println("6. Exit");
+                System.out.print("\nChoose option : ");
+                int choice = i.nextInt();
+
+                while (choice < 1 || choice >=7) {
+
+                    System.out.print("\nInvalid choice. Please select a valid option.");
+                    System.out.println("\n\nSelect your option below: ");
+                    System.out.println("1. Select item");
+                    System.out.println("2. Display items");
+                    System.out.println("3. Delete item");
+                    System.out.println("4. Pay");
+                    System.out.println("5. Log out");
+                    System.out.println("6. Exit");
+                    System.out.print("\nChoose option : ");
+                    choice = i.nextInt();
+                }
+
+                if (choice == 1) {
+
+                    order.displayMenu();
+
+                }else if(choice == 2){
+
+                    order.display();
+
+                }else if(choice == 3){
+
+                    delete();
+
+                }else if(choice == 4){
+
+                    makePayment();
+
+                }else if(choice == 5){
+
+                    logOut();
+
+                }else if(choice == 6){
+
+                    System.out.println("\nThank you for using our Cashiering System.");
+                    System.exit(0);
+
+                }else {
+
+                    System.out.println("\nInvalid choice. Please select a valid option.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid numeric choice.");
+                select();
+                break;
+
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner i = new Scanner(System.in);
+        Main order = new Main();
+
+        LogIn();
+
+        while (true) {
+
+            try {
+                System.out.println("\nSelect your option below: ");
+                System.out.println("1. Select item");
+                System.out.println("2. Display items");
+                System.out.println("3. Delete item");
+                System.out.println("4. Pay");
+                System.out.println("5. Log out");
+                System.out.println("6. Exit");
+                System.out.print("\nChoose option : ");
+                int choice = i.nextInt();
+
+                while (choice < 1 || choice >=7) {
+
+                    System.out.print("\nInvalid choice. Please select a valid option.");
+                    System.out.println("\n\nSelect your option below: ");
+                    System.out.println("1. Select item");
+                    System.out.println("2. Display items");
+                    System.out.println("3. Delete item");
+                    System.out.println("4. Pay");
+                    System.out.println("5. Log out");
+                    System.out.println("6. Exit");
+                    System.out.print("\nChoose option : ");
+                    choice = i.nextInt();
+                }
+
+                if (choice == 1) {
+
+                    order.displayMenu();
+
+                }else if(choice == 2){
+
+                    order.display();
+
+                }else if(choice == 3){
+
+                    delete();
+
+                }else if(choice == 4){
+
+                    makePayment();
+
+                }else if(choice == 5){
+
+                    logOut();
+
+                }else if(choice == 6){
+
+                    System.out.println("\nThank you for using our Cashiering System.");
+                    System.exit(0);
+
+                }else {
+
+                    System.out.println("\nInvalid choice. Please select a valid option.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid numeric choice.");
+                select();
+                break;
+
+            }
+
+        }
+    }
